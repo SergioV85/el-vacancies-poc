@@ -1,7 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { Observable } from 'rxjs';
 
-import { Vacancy } from '@el/api-interfaces';
+import { Vacancy, VacancyDetails } from '@el/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -11,6 +11,11 @@ export class AppController {
 
   @Get('vacancies')
   getVacancies(): Observable<Vacancy[]> {
-    return this.appService.getVacancies('', []);
+    return this.appService.getVacancies();
+  }
+
+  @Get('vacancy/:id')
+  getVacancyDetails(@Param('id') id): Observable<VacancyDetails> {
+    return this.appService.getVacancy(id);
   }
 }
