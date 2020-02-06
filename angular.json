@@ -21,11 +21,12 @@
             "polyfills": "apps/elipslife-jobs/src/polyfills.ts",
             "tsConfig": "apps/elipslife-jobs/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/elipslife-jobs/src/favicon.ico",
-              "apps/elipslife-jobs/src/assets"
+            "assets": ["apps/elipslife-jobs/src/favicon.ico", "apps/elipslife-jobs/src/assets"],
+            "styles": [
+              "apps/elipslife-jobs/src/styles.scss",
+              "apps/elipslife-jobs/src/fonts/font-icon-gizmo.scss",
+              "apps/elipslife-jobs/src/fonts/fonts.scss"
             ],
-            "styles": ["apps/elipslife-jobs/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -81,10 +82,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/elipslife-jobs/tsconfig.app.json",
-              "apps/elipslife-jobs/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/elipslife-jobs/tsconfig.app.json", "apps/elipslife-jobs/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/elipslife-jobs/**"]
           }
         },
@@ -163,10 +161,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/api/tsconfig.app.json",
-              "apps/api/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/api/tsconfig.app.json", "apps/api/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/api/**"]
           }
         },
@@ -188,10 +183,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/api-interfaces/tsconfig.lib.json",
-              "libs/api-interfaces/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/api-interfaces/tsconfig.lib.json", "libs/api-interfaces/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
           }
         },

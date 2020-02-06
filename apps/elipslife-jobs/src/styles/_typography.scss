@@ -1,0 +1,41 @@
+@import './responsive';
+
+.elip {
+  &-h1 {
+    @include h1-font-size;
+    font-weight: bold;
+  }
+
+  &-h2 {
+    @include h2-font-size;
+    font-weight: bold;
+  }
+
+  &-h3 {
+    @include h3-font-size;
+  }
+
+  &-h4 {
+    @include h4-font-size;
+  }
+
+  &-h5 {
+    @include normal-font-size;
+  }
+
+  &-default-content {
+    @include normal-font-size;
+  }
+
+  &-small-content {
+    @include small-font-size;
+  }
+
+  &-hint {
+    @include micro-font-size;
+  }
+
+  &-micro-content {
+    @include micro-font-size;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="container vacancies-list">
+  <ng-template ngFor
+      let-vacancy
+      [ngForOf]="vacancies$ | async"
+      let-i="index">
+    <a [routerLink]="[ vacancy.id ]"
+        class="vacancies-list__vacancy">
+      <i class="icon-navigate-right vacancies-list__vacancy-arrow"
+          aria-hidden="true"></i>
+      <h3 class="vacancies-list__vacancy-title">
+        {{ vacancy.name }}
+      </h3>
+      <div class="vacancies-list__vacancy-location">{{ vacancy.location }} / {{ vacancy.country }} </div>
+    </a>
+  </ng-template>
+</div>

@@ -1,0 +1,167 @@
+@import '~modularscale-sass/stylesheets/modularscale/vars';
+@import '~modularscale-sass/stylesheets/modularscale/settings';
+@import '~modularscale-sass/stylesheets/modularscale/pow';
+@import '~modularscale-sass/stylesheets/modularscale/strip-units';
+@import '~modularscale-sass/stylesheets/modularscale/sort';
+@import '~modularscale-sass/stylesheets/modularscale/target';
+@import '~modularscale-sass/stylesheets/modularscale/function';
+@import '~modularscale-sass/stylesheets/modularscale/round-px';
+@import '~modularscale-sass/stylesheets/modularscale/respond';
+@import '~modularscale-sass/stylesheets/modularscale/sugar';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import './variables';
+
+$phone: map-get($grid-breakpoints, sm); // 576px
+$tablet: map-get($grid-breakpoints, md); // 768px
+$laptop: map-get($grid-breakpoints, lg); // 992px
+$desktop: map-get($grid-breakpoints, xl); // 1200px
+
+$modularscale: (base: $base, ratio: $ratio, // 0px - 575px
+$phone: (base: $phone-base, ratio: $phone-ratio), // 576px - 767px
+$tablet: (base: $tablet-base, ratio: $tablet-ratio), // 768px - 991px
+$laptop: (base: $laptop-base, ratio: $laptop-ratio), // 992px - 1199px
+$desktop: (base: $desktop-base, ratio: $desktop-ratio)); // 1200px - inf
+
+@mixin h1-font-size {
+  @include ms-respond(font-size, 10);
+}
+
+@mixin h2-font-size {
+  @include ms-respond(font-size, 7);
+}
+
+@mixin h3-font-size {
+  @include ms-respond(font-size, 3);
+}
+
+@mixin h4-font-size {
+  @include ms-respond(font-size, 2);
+}
+
+@mixin normal-font-size {
+  @include ms-respond(font-size, 0);
+}
+
+@mixin small-font-size {
+  @include ms-respond(font-size, -1);
+}
+
+@mixin micro-font-size {
+  @include ms-respond(font-size, -2);
+}
+
+@mixin nano-font-size {
+  @include ms-respond(font-size, -3);
+}
+
+@mixin large-icon-size {
+  @include ms-respond(width, 3);
+  @include ms-respond(height, 3);
+  @include ms-respond(font-size, 3);
+  line-height: 1;
+}
+
+@mixin normal-icon-size {
+  @include ms-respond(width, 1);
+  @include ms-respond(height, 1);
+  @include ms-respond(font-size, 1);
+  line-height: 1;
+}
+
+@mixin small-icon-size {
+  @include ms-respond(width, 0);
+  @include ms-respond(height, 0);
+  @include ms-respond(font-size, 0);
+  line-height: 1;
+}
+
+@mixin micro-icon-size {
+  @include ms-respond(width, -2);
+  @include ms-respond(height, -2);
+  @include ms-respond(font-size, -2);
+  line-height: 1;
+}
+
+// MOBILE FIRST
+
+/*
+@mixin small-phone {
+  @include media-breakpoint-only(xs) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @include media-breakpoint-only(sm) {
+    @content;
+  }
+}
+*/
+
+// TODO: Extend media breakpoint by height limitation also
+
+@mixin phone {
+  @include media-breakpoint-only(sm) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  // @media (min-height: 450px) {
+  @include media-breakpoint-only(md) {
+    @content;
+  }
+
+  // }
+}
+
+@mixin laptop {
+  // @media (min-height: 600px) {
+  @include media-breakpoint-only(lg) {
+    @content;
+  }
+
+  // }
+}
+
+@mixin desktop {
+  // @media (min-height: 600px) {
+  @include media-breakpoint-only(xl) {
+    @content;
+  }
+
+  // }
+}
+
+@mixin phone-down {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+
+@mixin phone-up {
+  @include media-breakpoint-up(sm) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  // @media (min-height: 450px) {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+
+  // }
+}
+
+@mixin laptop-up {
+  // @media (min-height: 600px) {
+  @include media-breakpoint-up(lg) {
+    @content;
+  }
+
+  // }
+}

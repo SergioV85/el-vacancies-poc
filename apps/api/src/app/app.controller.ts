@@ -1,6 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
+import { Observable } from 'rxjs';
 
-import { Message } from '@el/api-interfaces';
+import { Vacancy } from '@el/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -8,8 +9,8 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
-  getData(): Message {
-    return this.appService.getData();
+  @Get('vacancies')
+  getVacancies(): Observable<Vacancy[]> {
+    return this.appService.getVacancies('', []);
   }
 }

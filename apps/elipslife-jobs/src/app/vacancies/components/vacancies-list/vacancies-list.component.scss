@@ -1,0 +1,28 @@
+@import './../../../../styles/variables';
+@import './../../../../styles/responsive';
+
+.vacancies-list {
+  &__vacancy {
+    align-items: center;
+    border-bottom: 1px solid $color-gray-20;
+    color: $color-blue-lake;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    text-decoration: none;
+
+    &-arrow {
+      font-size: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+
+    &-title {
+      flex: 1 1 auto;
+    }
+
+    &-location {
+      margin-left: auto;
+    }
+  }
+}

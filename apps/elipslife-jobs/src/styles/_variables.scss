@@ -1,0 +1,105 @@
+// Base
+$color-white: #fff;
+$color-black: #000;
+
+// Graytones
+$color-gray: #585857;
+$color-gray-80: #878686;
+$color-gray-60: #b2b2b2;
+$color-gray-40: #dadad9;
+$color-gray-20: #f1f2f3;
+$color-gray-10: #fafafa;
+
+// Brand
+$color-blue-lake: #00547a;
+$color-blue-lake-80: #007193;
+$color-blue-lake-60: #4591b0;
+$color-blue-lake-40: #85b3cc;
+$color-blue-lake-20: #c1d8e6;
+$color-blue-lake-10: #e5eef1;
+$color-blue-sky: #00b6e8;
+$color-blue-sky-80: #5ec4f0;
+$color-blue-sky-60: #93d3f4;
+$color-blue-sky-40: #bce2f7;
+$color-blue-sky-20: #e0f3fc;
+$color-blue-stone: #9db0ba;
+$color-blue-stone-80: #afbec8;
+$color-blue-stone-60: #c3cfd7;
+$color-blue-stone-40: #d6dee4;
+$color-blue-stone-20: #eaeef1;
+
+// Brand Secondary Colors
+$color-red: #c31622;
+$color-red-80: #e95035;
+$color-red-60: #ef8061;
+$color-red-40: #f5af95;
+$color-red-20: #fcd9ca;
+$color-green: #9fc539;
+$color-green-80: #a3c853;
+$color-green-60: #bcd583;
+$color-green-40: #d5e4b0;
+$color-green-20: #eaf3da;
+// New color extension, for app UI needs
+$color-yellow: #f28e40;
+$color-yellow-80: #ffb152;
+$color-yellow-60: #ffc37a;
+$color-yellow-40: #ffd999;
+$color-yellow-20: #ffeccc;
+
+$header-height: 100px;
+$header-height-desktop: 100px;
+$main-content-padding: 70px;
+$main-content-padding-desktop: 20px;
+
+$header-background: $color-gray-10;
+
+$navigation-background: $color-blue-lake;
+$navigation-panel-size: 50px;
+$navigation-panel-size-laptop: 75px;
+
+$navigation-panel-background: $color-gray-20;
+$navigation-panel-status-node: 1rem;
+$navigation-panel-status-node-border-default: $color-blue-stone-60;
+$navigation-panel-status-node-border-passed: $color-blue-sky;
+$navigation-panel-status-node-background-passed: $color-blue-sky;
+$navigation-panel-line-background-default: $color-blue-stone-40;
+$navigation-panel-line-background-passed: $color-blue-sky-60;
+
+$form-pagination: 50px;
+
+$main-font: ('Interstate', sans-serif);
+$main-background: $color-blue-lake-10;
+
+$readonly-background: $color-gray-20;
+
+$box-shadow-bottom: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-top: 0 -5px 5px -5px rgba(0, 0, 0, 0.1);
+$box-shadow-top-inset: 0 5px 5px 0 rgba(0, 0, 0, 0.1) inset;
+$box-shadow-left: -5px 0 5px -5px rgba(0, 0, 0, 0.1);
+$box-shadow-right: 5px 0 5px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-all: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+
+$navigation-pane-shadow-right: 2px 0 15px rgba($color-blue-stone, 0.2);
+$navigation-pane-shadow-bottom: 0 2px 15px rgba($color-blue-stone, 0.2);
+
+$border-radius: 10px;
+
+$base: 12px;
+$ratio: 1.1;
+
+$phone-base: 16px;
+$phone-ratio: 1.1;
+
+$tablet-base: 16px;
+$tablet-ratio: 1.15;
+
+$laptop-base: 16px;
+$laptop-ratio: 1.15;
+
+$desktop-base: 16px;
+$desktop-ratio: 1.15;
+
+@mixin transition($property: all, $duration: 0.5s, $timings: (0.165, 0.44, 0.84, 1)) {
+  // ELIPCARE-516
+  // transition: $property $duration cubic-bezier($timings);
+}
