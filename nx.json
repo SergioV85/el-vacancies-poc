@@ -1,0 +1,28 @@
+{
+  "npmScope": "el",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "elipslife-jobs": {
+      "tags": []
+    },
+    "elipslife-jobs-e2e": {
+      "tags": [],
+      "implicitDependencies": ["elipslife-jobs"]
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    }
+  }
+}
