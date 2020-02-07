@@ -1,1 +1,5 @@
-{{ vacancy$ | async | json }}
+<div class="vacancy-details">
+  <div class="vacancy-details__content"
+      [innerHTML]="(vacancy$ | async)?.description">
+  </div>
+</div>

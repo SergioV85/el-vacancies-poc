@@ -48,6 +48,7 @@ $color-yellow-20: #ffeccc;
 
 $header-height: 100px;
 $header-height-desktop: 100px;
+$footer-height: 300px;
 $main-content-padding: 70px;
 $main-content-padding-desktop: 20px;
 
@@ -98,8 +99,3 @@ $laptop-ratio: 1.15;
 
 $desktop-base: 16px;
 $desktop-ratio: 1.15;
-
-@mixin transition($property: all, $duration: 0.5s, $timings: (0.165, 0.44, 0.84, 1)) {
-  // ELIPCARE-516
-  // transition: $property $duration cubic-bezier($timings);
-}

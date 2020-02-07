@@ -1,11 +1,12 @@
 import { Module, HttpModule } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { VacancyController } from './controllers/vacancy/vacancy.controller';
+import { VacancyService } from './services/vacancy/vacancy.service';
+import { ServiceNowProxyService } from './services/service-now-proxy/service-now-proxy.service';
 
 @Module({
   imports: [HttpModule],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [VacancyController],
+  providers: [VacancyService, ServiceNowProxyService],
 })
 export class AppModule {}

@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './libs/components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './libs/components/footer/footer.component';
 
 export const routes: Routes = [
   {
@@ -19,7 +21,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, {
@@ -28,6 +30,7 @@ export const routes: Routes = [
       anchorScrolling: 'disabled',
     }),
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,30 @@
+@import './../../../../styles/variables';
+@import './../../../../styles/responsive';
+
+.vacancy-details {
+  &__content {
+    ::ng-deep .jobDetails {
+      .detail-container,
+      .signature-container {
+        @include normal-font-size;
+        &__title {
+          @include h3-font-size;
+          font-weight: bold;
+        }
+
+        &__location {
+          @include h4-font-size;
+          font-weight: bold;
+        }
+
+        &__paragraph {
+          margin: 0;
+        }
+      }
+
+      .signature-container {
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -1,16 +1,21 @@
 <div class="container vacancies-list">
-  <ng-template ngFor
-      let-vacancy
-      [ngForOf]="vacancies$ | async"
-      let-i="index">
-    <a [routerLink]="[ vacancy.id ]"
-        class="vacancies-list__vacancy">
-      <i class="icon-navigate-right vacancies-list__vacancy-arrow"
-          aria-hidden="true"></i>
-      <h3 class="vacancies-list__vacancy-title">
-        {{ vacancy.name }}
-      </h3>
-      <div class="vacancies-list__vacancy-location">{{ vacancy.location }} / {{ vacancy.country }} </div>
-    </a>
-  </ng-template>
+  <mat-spinner *ngIf="isLoading"
+      class="vacancies-list__loader">
+  </mat-spinner>
+  <div class="vacancies-list__content">
+    <ng-template ngFor
+        let-vacancy
+        [ngForOf]="vacancies$ | async"
+        let-i="index">
+      <a [routerLink]="[ vacancy.id ]"
+          class="vacancies-list__vacancy">
+        <i class="icon-navigate-right vacancies-list__vacancy-arrow"
+            aria-hidden="true"></i>
+        <h3 class="elip-h3 vacancies-list__vacancy-title">
+          {{ vacancy.name }}
+        </h3>
+        <div class="elip-default-content vacancies-list__vacancy-location">{{ vacancy.location }} / {{ vacancy.country }} </div>
+      </a>
+    </ng-template>
+  </div>
 </div>

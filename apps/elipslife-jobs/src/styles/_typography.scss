@@ -13,6 +13,7 @@
 
   &-h3 {
     @include h3-font-size;
+    font-weight: bold;
   }
 
   &-h4 {

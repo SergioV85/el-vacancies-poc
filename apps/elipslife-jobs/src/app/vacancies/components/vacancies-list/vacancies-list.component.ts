@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, finalize } from 'rxjs/operators';
 import { Vacancy } from '@el/api-interfaces';
 import { VacanciesService } from '../../../libs/services/vacancies/vacancies.service';
 
@@ -11,12 +11,16 @@ import { VacanciesService } from '../../../libs/services/vacancies/vacancies.ser
 })
 export class VacanciesListComponent implements OnInit, OnDestroy {
   public vacancies$?: Observable<Vacancy[]>;
+  public isLoading = true;
   private readonly ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(private readonly vacanciesService: VacanciesService) {}
 
   public ngOnInit() {
-    this.vacancies$ = this.vacanciesService.getVacancies().pipe(takeUntil(this.ngUnsubscribe));
+    this.vacancies$ = this.vacanciesService.getVacancies().pipe(
+      finalize(() => (this.isLoading = false)),
+      takeUntil(this.ngUnsubscribe),
+    );
   }
 
   public ngOnDestroy() {

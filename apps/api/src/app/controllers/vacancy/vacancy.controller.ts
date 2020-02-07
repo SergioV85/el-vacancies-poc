@@ -3,19 +3,19 @@ import { Observable } from 'rxjs';
 
 import { Vacancy, VacancyDetails } from '@el/api-interfaces';
 
-import { AppService } from './app.service';
+import { VacancyService } from '../../services/vacancy/vacancy.service';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class VacancyController {
+  constructor(private readonly vacancyService: VacancyService) {}
 
   @Get('vacancies')
   getVacancies(): Observable<Vacancy[]> {
-    return this.appService.getVacancies();
+    return this.vacancyService.getVacancies();
   }
 
   @Get('vacancy/:id')
   getVacancyDetails(@Param('id') id): Observable<VacancyDetails> {
-    return this.appService.getVacancy(id);
+    return this.vacancyService.getVacancy(id);
   }
 }

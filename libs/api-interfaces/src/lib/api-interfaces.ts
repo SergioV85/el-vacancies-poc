@@ -22,6 +22,6 @@ export interface Vacancy {
   name: string;
 }
 
-export interface VacancyDetails extends Vacancy {
+export interface VacancyDetails {
   description: string;
 }

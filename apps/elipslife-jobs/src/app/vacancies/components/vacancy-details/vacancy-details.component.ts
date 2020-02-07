@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Vacancy } from '@el/api-interfaces';
+import { VacancyDetails } from '@el/api-interfaces';
 import { VacanciesService } from '../../../libs/services/vacancies/vacancies.service';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'el-vacancy-details',
@@ -11,12 +11,13 @@ import { ActivatedRouteSnapshot } from '@angular/router';
   styleUrls: ['./vacancy-details.component.scss'],
 })
 export class VacancyDetailsComponent implements OnInit, OnDestroy {
-  public vacancy$?: Observable<Vacancy>;
+  public vacancy$?: Observable<VacancyDetails>;
   private readonly vacancyId: string;
   private readonly ngUnsubscribe: Subject<void> = new Subject<void>();
 
-  constructor(private readonly vacanciesService: VacanciesService, private readonly route: ActivatedRouteSnapshot) {
-    this.vacancyId = route.params.id;
+  constructor(private readonly vacanciesService: VacanciesService, route: ActivatedRoute) {
+    console.log(route);
+    this.vacancyId = route.snapshot.params.id;
   }
 
   public ngOnInit() {

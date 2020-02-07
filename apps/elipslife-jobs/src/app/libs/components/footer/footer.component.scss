@@ -1,0 +1,12 @@
+@import './../../../../styles/variables';
+@import './../../../../styles/responsive';
+
+.elip-footer {
+  border: none;
+  background: url('./../../../../assets/elipsLife-keyvisual.jpg') no-repeat top;
+  background-size: auto;
+  background-size: 100% auto;
+  height: $footer-height;
+  position: relative;
+  width: 100%;
+}
