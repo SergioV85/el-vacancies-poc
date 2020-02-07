@@ -1,0 +1,25 @@
+service:
+  name: el-jobs-poc-server
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: eu-central-1
+  stage: prod
+
+functions:
+  main:
+    handler: apps/api/lambda.handler
+    events:
+      - http:
+          method: any
+          path: /{any+}
+
+custom:
+  serverless-offline:
+    dontPrintOutput: true
