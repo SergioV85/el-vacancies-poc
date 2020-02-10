@@ -17,11 +17,12 @@ phases:
       - mv package-server.json package.json
 
 artifacts:
-  files:
-    - 'dist/apps/api/main.js'
-  name: el-jobs-server-bundle-$(date +%Y-%m-%d)
-  discard-paths: yes
   secondary-artifacts:
+    app:
+      files:
+        - 'dist/apps/api/main.js'
+      name: el-jobs-server-bundle-$(date +%Y-%m-%d)
+      discard-paths: yes
     package:
       files:
         - 'package.json'
