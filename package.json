@@ -8,6 +8,7 @@
     "start": "ng serve",
     "start:all": "ng serve api & ng serve",
     "build": "ng build",
+    "build:server": "ng build api",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",

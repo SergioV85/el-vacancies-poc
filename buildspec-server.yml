@@ -9,13 +9,12 @@ phases:
       - npm install
   build:
     commands:
-      - echo Build the app
-      - npm run build
+      - echo Build the server app
+      - npm run build:server
   post_build:
     commands:
       - echo App built
+      - mv dist/apps/api/main.js dist/apps/api/server.js
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'dist/apps/api*'
-  discard-paths: yes
+    - 'dist/apps/api/server.js'
