@@ -15,8 +15,8 @@ phases:
     commands:
       - echo Prepare bundle
       - mkdir dist/bundle
-      - copy package-server.json dist/bundle/package.json
-      - copy dist/apps/api/main.js dist/bundle/main.js
+      - cp package-server.json dist/bundle/package.json
+      - cp dist/apps/api/main.js dist/bundle/main.js
 
 artifacts:
   files:
