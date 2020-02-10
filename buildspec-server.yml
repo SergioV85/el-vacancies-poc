@@ -13,17 +13,13 @@ phases:
       - npm run build:server
   post_build:
     commands:
-      - echo Replace package.json
-      - mv package-server.json package.json
+      - echo Prepare bundle
+      - mkdir dist/bundle
+      - copy package-server.json dist/bundle/package.json
+      - copy dist/apps/api/main.js dist/bundle/main.js
 
 artifacts:
-  secondary-artifacts:
-    app:
-      files:
-        - 'dist/apps/api/main.js'
-      name: el-jobs-server-bundle-$(date +%Y-%m-%d)
-      discard-paths: yes
-    package:
-      files:
-        - 'package.json'
-      name: 'el-jobs-server-package.json'
+  files:
+    - 'dist/bundle/*.*'
+  name: el-jobs-server-bundle-$(date +%Y-%m-%d)
+  discard-paths: yes
