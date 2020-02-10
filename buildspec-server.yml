@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - echo Replace package.json
-      - mv package-server.json package.json /Y
+      - mv package-server.json package.json
 
 artifacts:
   files:
