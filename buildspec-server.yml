@@ -19,3 +19,8 @@ artifacts:
     - 'dist/apps/api/main.js'
   name: el-jobs-server-bundle-$(date +%Y-%m-%d)
   discard-paths: yes
+  secondary-artifacts:
+    package:
+      files:
+        - 'package-server.json'
+      name: 'el-jobs-server-package.json'
