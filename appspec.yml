@@ -5,10 +5,14 @@ files:
     destination: /var/www/el-jobs-poc-sever/
 hooks:
   BeforeInstall:
-    - location: .aws/codedeploy-before-install.sh
+    - location: scripts/before-install.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: .aws/codedeploy-after-install.sh
+   ApplicationStart:
+    - location: scripts/start_app.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_app.sh
       timeout: 300
       runas: root
