@@ -13,7 +13,9 @@ phases:
       - npm run build:server
   post_build:
     commands:
-      - echo App built
+      - echo Replace package.json
+      - mv package-server.json package.json /Y
+
 artifacts:
   files:
     - 'dist/apps/api/main.js'
@@ -22,5 +24,5 @@ artifacts:
   secondary-artifacts:
     package:
       files:
-        - 'package-server.json'
+        - 'package.json'
       name: 'el-jobs-server-package.json'
