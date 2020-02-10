@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm i && node main.js",
+    "clean": "rm -rf node_modules/",
+    "start": "npm run clean && npm i && node main.js",
     "build:server": "ng build api --prod"
   },
   "private": true,

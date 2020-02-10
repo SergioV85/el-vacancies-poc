@@ -18,9 +18,12 @@ FROM node:10
 ENV WORK_DIR /usr/src/app
 WORKDIR ${WORK_DIR}
 
-COPY --from=builder ${WORK_DIR}/package-server.json ${WORK_DIR}
+# COPY --from=builder ${WORK_DIR}/package-server.json ${WORK_DIR}
 
-RUN [ "npm", "install", "--", "production"]
+RUN [ "npm", "install", "typescript", "-", "g"]
+RUN [ "npm", "install", "ts-node", "-", "g"]
+
+# RUN [ "npm", "install", "--", "production"]
 
 COPY --from=builder ${WORK_DIR}/dist/apps/api ${WORK_DIR}
 
