@@ -17,3 +17,5 @@ phases:
 artifacts:
   files:
     - 'dist/apps/api/main.js'
+  name: el-jobs-server-bundle-$(date +%Y-%m-%d)
+  discard-paths: yes

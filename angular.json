@@ -21,10 +21,7 @@
             "polyfills": "apps/elipslife-jobs/src/polyfills.ts",
             "tsConfig": "apps/elipslife-jobs/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/elipslife-jobs/src/favicon.ico",
-              "apps/elipslife-jobs/src/assets"
-            ],
+            "assets": ["apps/elipslife-jobs/src/favicon.ico", "apps/elipslife-jobs/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/elipslife-jobs/src/styles.scss",
@@ -86,14 +83,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/elipslife-jobs/tsconfig.app.json",
-              "apps/elipslife-jobs/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/elipslife-jobs/**"
-            ]
+            "tsConfig": ["apps/elipslife-jobs/tsconfig.app.json", "apps/elipslife-jobs/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/elipslife-jobs/**"]
           }
         },
         "test": {
@@ -127,13 +118,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/elipslife-jobs-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/elipslife-jobs-e2e/**"
-            ]
+            "tsConfig": ["apps/elipslife-jobs-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/elipslife-jobs-e2e/**"]
           }
         }
       }
@@ -151,9 +137,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/server.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -165,6 +149,16 @@
                   "replace": "apps/api/src/environments/environment.ts",
                   "with": "apps/api/src/environments/environment.prod.ts"
                 }
+              ],
+              "externalDependencies": [
+                "@nestjs/microservices",
+                "@nestjs/microservices/microservices-module",
+                "@nestjs/websockets",
+                "@nestjs/websockets/socket-module",
+                "@nestjs/platform-express",
+                "class-transformer",
+                "class-validator",
+                "cache-manager"
               ]
             }
           }
@@ -178,14 +172,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/api/tsconfig.app.json",
-              "apps/api/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/api/**"
-            ]
+            "tsConfig": ["apps/api/tsconfig.app.json", "apps/api/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/api/**"]
           }
         },
         "test": {
@@ -206,14 +194,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/api-interfaces/tsconfig.lib.json",
-              "libs/api-interfaces/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api-interfaces/**"
-            ]
+            "tsConfig": ["libs/api-interfaces/tsconfig.lib.json", "libs/api-interfaces/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
           }
         },
         "test": {
