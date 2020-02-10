@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/el-jobs-poc-sever/
+hooks:
+  BeforeInstall:
+    - location: .aws/codedeploy-before-install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: .aws/codedeploy-after-install.sh
+      timeout: 300
+      runas: root
