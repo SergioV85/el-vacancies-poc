@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/el-jobs-poc-sever/
+  - source: ./scripts/*
+    destination: /var/www/el-jobs-poc-sever/scripts
 hooks:
   BeforeInstall:
-    - location: scripts/before-install.sh
+    - location: ./before-install.sh
       timeout: 300
       runas: root
    ApplicationStart:
-    - location: scripts/start_app.sh
+    - location: ./start_app.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_app.sh
+    - location: ./stop_app.sh
       timeout: 300
       runas: root
