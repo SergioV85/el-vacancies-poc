@@ -27,4 +27,19 @@
       }
     }
   }
+  &__actions {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem;
+    text-align: center;
+
+    &-apply {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }

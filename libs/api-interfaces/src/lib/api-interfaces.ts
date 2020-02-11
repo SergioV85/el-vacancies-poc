@@ -15,6 +15,15 @@ export interface ServiceNowPayload {
   '0.x_referer': string;
 }
 
+export interface Dictionaries {
+  [key: string]: DictionaryItem[];
+}
+
+export interface DictionaryItem {
+  id: string;
+  name: string;
+}
+
 export interface Vacancy {
   country: string;
   id: string;

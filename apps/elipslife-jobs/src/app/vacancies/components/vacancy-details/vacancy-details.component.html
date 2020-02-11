@@ -1,5 +1,13 @@
 <div class="vacancy-details">
   <div class="vacancy-details__content"
-      [innerHTML]="(vacancy$ | async)?.description">
+      [innerHTML]="vacancy?.description">
+  </div>
+  <div class="vacancy-details__actions">
+    <a mat-flat-button
+        color="primary"
+        class="vacancy-details__actions-apply"
+        [routerLink]="['apply']">
+      Apply Now
+    </a>
   </div>
 </div>

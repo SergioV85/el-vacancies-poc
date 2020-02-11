@@ -28,13 +28,15 @@ export class VacancyService {
 
     const payload = {
       x_referer: referrer,
+      sysparm_aggregation_size: 1,
+      '0.sysparm_scope': 'x_inte3_recruit',
       '0.sysparm_toggler': 1,
       '0.sysparm_processor': 'getLocationJobs',
       '0.sysparm_name': 'Jobs',
       '0.sysparm_lang': 'en',
       '0.sysparm_job_loc': 'ALL',
     };
-    return this.serviceNow.getDataByPost(payload, '', []).pipe(map(this.parseVacancies));
+    return this.serviceNow.getDataByPost(payload, false, '', []).pipe(map(this.parseVacancies));
   }
 
   public getVacancy(id: string): Observable<VacancyDetails> {

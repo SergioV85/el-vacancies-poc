@@ -2,6 +2,7 @@
 @import './styles/variables.scss';
 @import './styles/responsive';
 @import './styles/typography.scss';
+@import './styles/controls.scss';
 
 html,
 body {
@@ -11,17 +12,10 @@ body {
   background-color: $color-white;
   color: $color-blue-lake;
   font-family: $main-font;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.4;
   margin: 0;
-
-  @media only screen and (min-width: 600px) {
-    font-size: 1.6rem;
-  }
-  @media only screen and (min-width: 992px) {
-    font-size: 1.7rem;
-  }
 
   ::selection {
     background-color: $color-blue-sky;

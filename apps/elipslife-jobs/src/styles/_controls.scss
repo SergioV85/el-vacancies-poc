@@ -1,0 +1,502 @@
+@import './variables';
+@import './responsive';
+
+.elip-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: $color-black;
+  cursor: pointer;
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &--primary {
+    background-color: $color-blue-lake;
+    border-color: $color-blue-lake;
+    color: $color-white;
+
+    &:disabled {
+      background-color: $color-blue-stone-20;
+      border-color: $color-blue-stone-60;
+      color: $color-blue-stone-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:active {
+      background-color: $color-blue-sky-80;
+      border-color: $color-blue-sky-80;
+      color: $color-white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue-sky;
+      border-color: $color-blue-sky;
+      color: $color-white;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-blue-stone-20;
+    border-color: $color-blue-stone-60;
+    color: $color-gray-80;
+
+    &:disabled {
+      background-color: $color-white;
+      border-color: $color-blue-stone-40;
+      color: $color-blue-stone-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:active {
+      background-color: $color-blue-sky-80;
+      border-color: $color-blue-sky-80;
+      color: $color-white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue-sky;
+      border-color: $color-blue-sky;
+      color: $color-white;
+    }
+  }
+
+  &--success {
+    background-color: $color-green-80;
+    border-color: $color-green-80;
+    color: $color-white;
+
+    &:disabled {
+      background-color: $color-green-60;
+      border-color: $color-green-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-green;
+      border-color: $color-green;
+    }
+  }
+
+  &--info {
+    background-color: $color-blue-sky;
+    border-color: $color-blue-sky;
+    color: $color-white;
+
+    &:disabled {
+      background-color: $color-blue-sky-60;
+      border-color: $color-blue-sky-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue-sky-80;
+      border-color: $color-blue-sky-80;
+      color: $color-white;
+    }
+  }
+
+  &--warning {
+    background-color: $color-yellow-80;
+    border-color: $color-yellow-80;
+    color: $color-white;
+
+    &:disabled {
+      background-color: $color-yellow-60;
+      border-color: $color-yellow-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-yellow;
+      border-color: $color-yellow;
+    }
+  }
+
+  &--danger {
+    background-color: $color-white;
+    border-color: $color-red-80;
+    color: $color-red-80;
+
+    &:disabled {
+      background-color: $color-red-60;
+      border-color: $color-red-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:active {
+      background-color: $color-red-60;
+      border-color: $color-red-60;
+      color: $color-white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-red-80;
+      border-color: $color-red-80;
+      color: $color-white;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border-color: $color-blue-stone-40;
+    color: $color-gray;
+
+    &:hover,
+    &:focus {
+      background-color: $color-gray-20;
+      color: $color-gray;
+    }
+  }
+
+  &--outline-primary {
+    background-color: $color-white;
+    border-color: $color-blue-sky-80;
+    color: $color-blue-sky-80;
+
+    &:disabled {
+      border-color: $color-blue-sky-60;
+      color: $color-blue-sky-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue-sky;
+      color: $color-white;
+    }
+  }
+
+  &--outline-secondary {
+    background-color: $color-white;
+    border-color: $color-blue-stone-60;
+    color: $color-gray-80;
+
+    &:disabled {
+      border-color: $color-blue-stone-60;
+      color: $color-gray;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:active {
+      background-color: $color-blue-sky-80;
+      border-color: $color-blue-sky-80;
+      color: $color-white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue-sky;
+      border-color: $color-blue-sky;
+      color: $color-white;
+    }
+  }
+
+  &--outline-success {
+    background-color: $color-white;
+    border-color: $color-green-80;
+    color: $color-green-80;
+
+    &:disabled {
+      background-color: $color-green-60;
+      border-color: $color-green-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-green;
+      color: $color-white;
+    }
+  }
+
+  &--outline-info {
+    background-color: $color-white;
+    border-color: $color-blue-lake-80;
+    color: $color-blue-lake-80;
+
+    &:disabled {
+      border-color: $color-blue-lake-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-blue-lake;
+      color: $color-white;
+    }
+  }
+
+  &--outline-warning {
+    background-color: $color-white;
+    border-color: $color-yellow-80;
+    color: $color-yellow-80;
+
+    &:disabled {
+      border-color: $color-yellow-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-yellow;
+      color: $color-white;
+    }
+  }
+
+  &--outline-danger {
+    background-color: $color-white;
+    border-color: $color-red-80;
+    color: $color-red-80;
+
+    &:disabled {
+      border-color: $color-red-60;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-red;
+      color: $color-white;
+    }
+  }
+
+  &--lg {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &--link {
+    color: $color-gray;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.elip-form-control {
+  &__label {
+    color: $color-gray;
+    display: inline;
+
+    &-container {
+      display: inline-block;
+    }
+
+    &-optional {
+      color: $color-gray;
+      @include micro-font-size;
+      margin-left: 4px;
+    }
+  }
+
+  &__control {
+    position: relative;
+
+    .mat-icon-button {
+      outline: none;
+    }
+
+    .mat-form-field {
+      width: 100%;
+    }
+
+    .mat-form-field-type-mat-native-select.mat-form-field-appearance-outline {
+      .mat-form-field-infix::after {
+        margin-top: -2px;
+      }
+    }
+
+    .mat-form-field-type-mat-native-select {
+      .mat-form-field-infix {
+        padding: 0;
+        top: 0;
+      }
+    }
+
+    .mat-form-field-flex {
+      align-items: center;
+      background-color: $color-white;
+      display: flex;
+
+      .mat-form-field-outline {
+        height: 2.5rem;
+        top: 0;
+
+        .mat-form-field-outline-start,
+        .mat-form-filed-outline-gap,
+        .mat-form-field-outline-end {
+          border-width: 1px;
+          border-radius: 0;
+        }
+      }
+    }
+
+    .mat-form-field-infix {
+      align-items: center;
+      border-top: 0;
+      display: flex;
+      height: 2.5rem;
+      padding: 0;
+      top: 0;
+
+      .mat-input-element {
+        text-overflow: ellipsis;
+        padding-right: 0.8rem;
+      }
+    }
+
+    .mat-form-field-appearance-outline {
+      .mat-form-field-suffix {
+        top: 0;
+
+        .mat-icon-button {
+          margin-right: -0.75em;
+        }
+      }
+
+      .mat-select-arrow-wrapper {
+        transform: none;
+      }
+    }
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    &.elip-form-control__control--disabled {
+      pointer-events: none;
+
+      .mat-form-field-flex {
+        background-color: $color-gray-20;
+      }
+
+      .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+        color: $color-gray-40;
+      }
+    }
+  }
+
+  &__input {
+    border-color: $color-blue-stone-60;
+    border-radius: 0;
+
+    &::-webkit-input-placeholder {
+      color: $color-blue-stone-60;
+    }
+
+    &::-moz-placeholder {
+      color: $color-blue-stone-60;
+    }
+
+    &:-ms-input-placeholder {
+      color: $color-blue-stone-60;
+    }
+
+    &:-moz-placeholder {
+      color: $color-blue-stone-60;
+    }
+
+    &:focus {
+      border-color: $color-blue-sky;
+      box-shadow: none;
+      outline: none;
+    }
+
+    &-append {
+      background-color: $color-blue-stone-20;
+
+      &-btn {
+        align-items: center;
+        color: $color-gray;
+        display: flex;
+        justify-content: center;
+        padding: 0.375rem 0.25rem;
+        width: 36px;
+
+        &-icon {
+          @include small-icon-size;
+        }
+      }
+    }
+
+    &--pseudo-readonly[readonly] {
+      background-color: $color-white;
+    }
+
+    &-invalid-sign {
+      color: $color-red-80;
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.is-invalid {
+      background-image: none;
+      border-color: $color-red-80;
+
+      & ~ .elip-form-control__input-invalid-sign {
+        display: inline-block;
+      }
+
+      & ~ .elip-form-control__input-append {
+        .elip-form-control__input-append-btn {
+          background-color: $color-red-20;
+          border-color: $color-red-80;
+          color: $color-red;
+        }
+      }
+    }
+  }
+
+  &__checkbox,
+  &__radio {
+    &-label {
+      color: $color-gray;
+      padding-left: 5px;
+    }
+
+    &-input {
+      margin-top: 3px;
+    }
+  }
+
+  &__subtext {
+    color: $color-blue-stone-60;
+    @include micro-font-size;
+  }
+}
+
+.elip-form-error {
+  color: $color-red-80;
+  @include micro-font-size;
+  margin-top: 3px;
+}

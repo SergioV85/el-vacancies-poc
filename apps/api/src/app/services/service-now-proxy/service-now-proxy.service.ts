@@ -1,7 +1,8 @@
 import { Injectable, HttpService } from '@nestjs/common';
-import { stringify } from 'qs';
+import { pipe, Observable, UnaryFunction } from 'rxjs';
 import { catchError, switchMap, map } from 'rxjs/operators';
-import { pathOr, mergeRight } from 'ramda';
+import { pathOr, mergeRight, pluck } from 'ramda';
+import { stringify } from 'qs';
 import { parseStringPromise } from 'xml2js';
 import { ServiceNowPayload } from '@el/api-interfaces';
 
@@ -11,15 +12,26 @@ export class ServiceNowProxyService {
 
   constructor(private readonly httpService: HttpService) {}
 
-  public getDataByPost(query: Partial<ServiceNowPayload>, token = '', cookies: []) {
+  public getDataByPost(
+    query: Partial<ServiceNowPayload>,
+    isMultiple = false,
+    token = '',
+    cookies: [],
+  ): Observable<string | string[]> {
     const payload = mergeRight(
       {
-        sysparm_aggregation_size: 1,
         sysparm_processor: 'AJAXXMLHttpAggregator',
-        '0.sysparm_scope': 'x_inte3_recruit',
       },
       query,
     );
+
+    const parsingResponse: UnaryFunction<any, string | string[]> = isMultiple
+      ? (pipe(
+          pathOr([], ['xml', 'xml']),
+          pluck('$'),
+          pluck('answer'),
+        ) as UnaryFunction<any, string[]>)
+      : pathOr('', ['xml', 'xml', 0, '$', 'answer']);
 
     return this.authorizeOnServiceNow().pipe(
       switchMap(() =>
@@ -33,13 +45,13 @@ export class ServiceNowProxyService {
         }),
       ),
       switchMap(({ data }) => parseStringPromise(data)),
-      map(pathOr('', ['xml', 'xml', 0, '$', 'answer'])),
+      map(parsingResponse),
       catchError(err => {
         const { response } = err;
         if (response.status === 401) {
           const newToken = response.headers['x-usertoken-response'];
           const receivedCookies = response.headers['set-cookie'];
-          return this.getDataByPost(payload, newToken, receivedCookies);
+          return this.getDataByPost(payload, isMultiple, newToken, receivedCookies);
         }
         throw err;
       }),
