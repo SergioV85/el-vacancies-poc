@@ -17,6 +17,7 @@ phases:
       - mkdir dist/bundle
       - cp package-server.json dist/bundle/package.json
       - cp dist/apps/api/main.js dist/bundle/main.js
+      - cp appspec.yml dist/bundle/main.js
 
 artifacts:
   files:
